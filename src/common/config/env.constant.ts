@@ -1,0 +1,1 @@
+export const SERVICE_EMAIL_EXPIRATION_TIME = 10;

@@ -1,0 +1,9 @@
+export enum AdminAuditTrailType {
+  'DELETE' = 'DELETE',
+  'ACTIVATE' = 'ACTIVATE',
+  'UPDATE' = 'UPDATE',
+  'DEACTIVATE' = 'DEACTIVATE',
+  'RESOLVE_DISPUTE' = 'RESOLVE_DISPUTE',
+  'CREATE' = 'CREATE',
+  'CREATE_ADMIN' = 'CREATE_ADMIN',
+}
