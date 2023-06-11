@@ -33,7 +33,7 @@ jobs:
         run: |
           mkdir app
           cp -rp dist/ app/dist
-          cp -rp node_module/ app/node_module
+          cp -rp node_modules/ app/node_modules
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
