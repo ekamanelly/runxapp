@@ -4,6 +4,7 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { AppModule } from './app.module';
 // just ekama messing around
 async function bootstrap() {
+  const port = process.env.PORT || 5000;
   const app = await NestFactory.create(AppModule);
   app.enableCors({
     origin: '*',
@@ -40,6 +41,6 @@ async function bootstrap() {
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api-documentation', app, document);
-  await app.listen(5000);
+  await app.listen(port);
 }
 bootstrap();
