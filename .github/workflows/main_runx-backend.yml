@@ -26,14 +26,15 @@ jobs:
           npm install
           pwd
           ls
-          npm run build --if-present
+          npm run build --if-present --omit=dev
           npm run test --if-present | true
 
       - name: arrange app directory
         run: |
           mkdir app
           cp -rp dist/ app/dist
-          cp  package.json app/package.json
+          cp -rp node_modules/ app/node_modules
+          # cp   app/package.json
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
