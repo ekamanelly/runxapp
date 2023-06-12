@@ -30,15 +30,8 @@ jobs:
           npm run test --if-present | true
 
       - name: arrange app directory
-        run: |
-          mkdir app
-          cp -rp dist/ app/dist
-          cp -rp node_modules/ app/node_modules
-          ls app/dist
-          ls app/node_modules
-
-      - name: Zip artifact for deployment
-        run: zip -r release.zip app
+        run: | 
+          zip -r release.zip dist node_modules
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
